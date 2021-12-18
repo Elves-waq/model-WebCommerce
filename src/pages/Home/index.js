@@ -1,16 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState} from "react"
+import { PageArea , SearchArea} from "./style";
+import { ErrorMessage } from "../../Components/MainComponents";
+import { Link } from "react-router-dom";
+import { PageContainer } from "../../Components/MainComponents";
+import Api from "../../helpers/WebCommerceAPI";
 
-const PageHome = () => {
-    return (
-        <div>
-            <h1>Initial Page</h1>
-            <Link to="/about">
-                <a>About</a>
-            </Link>
-        </div>
-    );
 
+const Home = () => {
+  
+
+  return (
+        <>
+            <SearchArea>
+                <PageContainer>
+                    
+                </PageContainer>
+            </SearchArea>
+            <PageContainer>
+                <PageArea>
+                    ...
+                </PageArea>
+            </PageContainer>
+        </>     
+  );    
 };
-
-export default PageHome;
+export default Home;

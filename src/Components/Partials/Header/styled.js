@@ -10,7 +10,7 @@ export const HeaderArea = styled.div`
     }
 
     .container{
-        max-width: 1040px;
+        max-width: 1000px;
         width:100%;
         height: 30px;
         margin: auto;
@@ -43,10 +43,13 @@ export const HeaderArea = styled.div`
             margin-left: 20px;
             margin-right: 20px;
 
-            a{
+            a, button{
+                border: 0;
+                background: none;
                 color: #000;
                 font-size: 14px;
                 text-decoration: none;
+                cursor: pointer;
 
                 &:hover{
                     color: #999;
