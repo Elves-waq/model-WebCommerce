@@ -25,9 +25,7 @@ const RecoverAccount = () => {
                       </label>
                       <button className="button__recover">Send</button>
 
-                   </form>
-                   
-
+                   </form>              
                </FormAreaContent>
            </PageRecoverArea>
            

@@ -13,6 +13,7 @@ const SingUp = () => {
     const [password,setPassword] = useState('');
     const [ConfirmPassword,setConfirmPassword] = useState('');
     const [disabled,setDisabled] = useState(false);
+    const [state,setState ] = useState('')
     const [error,setError] = useState('');
 
    
@@ -29,7 +30,7 @@ const SingUp = () => {
         }
        
       
-        const json = await useApi.register(name , email , password);
+        const json = await useApi.register(name ,state, email , password);
        
         if(json.error){
             setError(json.error);
@@ -58,6 +59,11 @@ const SingUp = () => {
                     <legend className="login__text">Full name:</legend>
                     <input type="text" name="name"  placeholder="name" disabled={disabled}
                     value={name} onChange={e =>setName(e.target.value)} required />
+                </label>
+                <label>
+                    <legend className="login__text">State:</legend>
+                    <input type="text" name="state"  placeholder="state" disabled={disabled}
+                    value={state} onChange={e =>setState(e.target.value)} required />
                 </label>   
                 
                 <label>
@@ -67,7 +73,7 @@ const SingUp = () => {
                 </label>
                 <label>
                     <legend className="login__text">Password:</legend>
-                    <input type="password" name="email" placeholder="password" disabled={disabled} 
+                    <input type="password" name="password" placeholder="password" disabled={disabled} 
                     value={password} onChange={e=>setPassword(e.target.value)}  required />
                 </label>
                 <label>

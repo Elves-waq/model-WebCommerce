@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import qs from 'qs';
 import { isLogged } from "./AuthHandler";
 
-const BASEAPI = 'https://jsonplaceholder.typicode.com/posts';
+const BASEAPI = 'http://alunos.b7web.com.br:501';
 
 const apiFetchPost = async (endpoint,body)=> {
     if(!body.token){
@@ -63,12 +63,27 @@ const WebCommerceAPI = {
           return json;  
 
     },
-    register:async (name,email,password)=> {
+    register:async (name,state,email,password)=> {
         const json = await apiFetchPost(
             'user/signup',
-            {name, email ,password}
+            {name,state, email ,password}
         );
 
+        return json;
+    },
+
+    getCategories:async () => {
+        const json = await apiFetchGet(
+            '/categories'
+        );
+        return json.categories;
+    }
+    ,
+    getAds: async (options) => {
+        const json = await apiFetchGet(
+            '/ad/list',
+            options
+        );
         return json;
     }
 
