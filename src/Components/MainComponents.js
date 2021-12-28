@@ -7,7 +7,6 @@ export const PageContainer = styled.div`
     margin: auto;
     
 `;
-export const pageTitle = styled.h1``;
  
 export const PageBody = styled.div``;
 
