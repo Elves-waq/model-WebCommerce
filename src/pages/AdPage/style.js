@@ -110,6 +110,27 @@ export const PageArea = styled.div`
 
         }
 
+@media (max-width:600px) {
+    &{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .leftSide{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        .Adbox{
+            width: 330px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+    .rightSide{
+        width: 330px;
+    }
+}
 `;
 
 export const OthersArea = styled.div`
@@ -129,7 +150,14 @@ export const OthersArea = styled.div`
 
     }
 
-
+@media (max-width:600px){
+    h2{
+        margin-left: 10px;
+    }
+    .list .aditem{
+        width: 50%;
+    }
+}
 `;
 
 export const BreadChumb = styled.div`
@@ -145,6 +173,11 @@ export const BreadChumb = styled.div`
         }
 
 
-
+ @media (max-width:600px){
+     &{
+         margin-left: 10px;
+         font-size: 14px;
+     }
+ }
 
 `;

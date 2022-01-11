@@ -30,6 +30,9 @@ const Header = () => {
                                     <Link to="/my-account">My account</Link>
                                 </li>
                                 <li>
+                                    <Link to="/about">About-Us</Link>
+                                </li>
+                                <li>
                                    <button onClick={handleLogout}>Logout</button>
                                 </li> 
                                 <li>
@@ -43,6 +46,9 @@ const Header = () => {
                             <>
                                 <li>
                                     <Link to="/signin">Login</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about">About-Us</Link>
                                 </li>
                                 <li>
                                     <Link to="/signup">register</Link>

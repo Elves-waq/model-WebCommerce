@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 
 export const ContainerRegisterArea = styled.div`
-     width: 100%;
-    background-color: #1190ca;
+    width: 100%;
+    background-color: #51b6d8;
     height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 30px 0;
 `;
 
 export const AreaRegister = styled.div`

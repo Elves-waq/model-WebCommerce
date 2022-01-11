@@ -13,8 +13,18 @@ const SingUp = () => {
     const [password,setPassword] = useState('');
     const [ConfirmPassword,setConfirmPassword] = useState('');
     const [disabled,setDisabled] = useState(false);
-    const [state,setState ] = useState('')
+    const [state,setState ] = useState('');
+    const [stateList,setStateList] = useState([]);
     const [error,setError] = useState('');
+
+    useEffect(()=>{
+        const getStates = async ()=>{
+            const sList = await useApi.getStates();
+            setStateList(sList);
+        }
+        getStates();
+
+    },[]);
 
    
     const handleSubmit = async (e) => {
@@ -30,7 +40,7 @@ const SingUp = () => {
         }
        
       
-        const json = await useApi.register(name ,state, email , password);
+        const json = await useApi.register(name , email , password ,state);
        
         if(json.error){
             setError(json.error);
@@ -62,8 +72,13 @@ const SingUp = () => {
                 </label>
                 <label>
                     <legend className="login__text">State:</legend>
-                    <input type="text" name="state"  placeholder="state" disabled={disabled}
-                    value={state} onChange={e =>setState(e.target.value)} required />
+                    <select disabled={disabled} value={state} required onChange={e=>setState(e.target.value)} >
+                        <option></option>
+                        {stateList.map((i,k)=>
+                           <option key={k} value={i._id}>{i.name}</option>         
+                        )}
+
+                    </select>
                 </label>   
                 
                 <label>

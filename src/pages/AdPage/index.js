@@ -42,9 +42,9 @@ const AdPage = () => {
                         Você está aqui:
                         <Link to="/">Home</Link>
                         /
-                        <Link to="">{adInfo.stateName}</Link>
+                        <Link to={`/ads?state=${adInfo.stateName}`}>{adInfo.stateName}</Link>
                         /
-                        <Link to="">{adInfo.category.name}</Link>
+                        <Link to={`/ads?state=${adInfo.stateName}&cat=${adInfo.category.slug}`}>{adInfo.category.name}</Link>
                         /
                         {adInfo.title}
 
@@ -123,17 +123,12 @@ const AdPage = () => {
                 {adInfo.others && 
                     <>
                         <h2>Seller's other offers</h2> 
-                        <div className="list">
+                        <div className="list" >
                                 {adInfo.others.map((i,k)=>
                                     <AdItem className="aditem" key={k} data={i}/>
                                 )}
-
                         </div>
-                    </>             
-
-                            
-                            
-                            
+                    </>      
                 }
             </OthersArea>
        </PageContainer>

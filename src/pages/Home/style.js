@@ -69,6 +69,14 @@ export const SearchArea = styled.div`
 
         }
     }
+ @media (max-width:600px){
+     padding: 10px;
+    .categoryList .categoryItem{
+        width: 50%;
+        margin-top: 5px;
+    }
+
+ }   
 `;
 
 
@@ -102,4 +110,14 @@ export const PageArea = styled.div`
     p{
         color: rgba(17,144,202,0.5);
     }
+@media (max-width: 600px) {
+    .list .aditem{
+        width: 100%;
+    }
+    .seeAllLink, p{
+        margin-left: 10px;
+    }
+    
+}
+
 `;
